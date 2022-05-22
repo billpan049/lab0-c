@@ -14,6 +14,7 @@
 /* Create an empty queue */
 struct list_head *q_new()
 {
+    INIT_LIST_HEAD(head);
     return NULL;
 }
 
