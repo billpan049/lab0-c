@@ -727,6 +727,11 @@ static bool do_swap(int argc, char *argv[])
     return !error_check();
 }
 
+static bool do_hello(int argc, char *argv[])
+{
+    return (bool) printf("Hello, World\n");
+}
+
 static bool is_circular()
 {
     struct list_head *cur = l_meta.l->next;
@@ -840,6 +845,7 @@ static void console_init()
         dedup, "                | Delete all nodes that have duplicate string");
     ADD_COMMAND(swap,
                 "                | Swap every two adjacent nodes in queue");
+    ADD_COMMAND(hello, "	| Print hello message");
     add_param("length", &string_length, "Maximum length of displayed string",
               NULL);
     add_param("malloc", &fail_probability, "Malloc failure probability percent",
